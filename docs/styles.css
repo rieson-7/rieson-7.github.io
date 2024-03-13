@@ -2,14 +2,13 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
 }
 
 .page-container {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #fff; /* 初始背景色为白色 */
   overflow: hidden;
 }
 
@@ -19,21 +18,16 @@ body, html {
   padding: 20px;
 }
 
-#knife {
+.mask {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  animation: knifeMove 1s linear forwards;
+  left: 50%; /* 从中间开始划开 */
+  width: 0%;
+  height: 100%;
+  background-color: #000; /* 遮罩的颜色为黑色 */
+  transition: width 1s ease-in-out; /* 过渡动画效果 */
 }
 
-@keyframes knifeMove {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1000000);
-  }
+.page-loaded .mask {
+  width: 100%; /* 页面加载完成后将遮罩宽度调整为100%，实现划开的效果 */
 }
