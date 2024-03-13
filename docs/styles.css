@@ -34,6 +34,6 @@ body, html {
     transform: scaleX(0);
   }
   100% {
-    transform: scaleX(100);
+    transform: scaleX(1000000);
   }
 }
